@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="库卡机器人质量部门数字员工矩阵 - 基于Harness工程的智能化质量管理架构">
+    <title>库卡质量数字员工矩阵 | 智能化质量管理架构</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-kuka">KUKA</span>
+                <span class="logo-divider">|</span>
+                <span class="logo-title">质量数字员工矩阵</span>
+            </div>
+                        <ul class="nav-menu">
+                <li><a href="#overview">概览</a></li>
+                <li><a href="#architecture">架构设计</a></li>
+                <li><a href="#orchestrators">编排器</a></li>
+                <li><a href="#metrics">实时数据</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 英雄区 -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badge">Harness 工程架构</div>
+            <h1 class="hero-title">
+                库卡质量部门<br>
+                <span class="gradient-text">数字员工矩阵</span>
+            </h1>
+            <p class="hero-subtitle">
+                从被动问答到主动编排 · 从信息检索到智能决策<br>
+                5大业务流程 × AI编排引擎 = 24小时质量守护者
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">业务场景编排器</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">智能Agent</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">自动化监控</div>
+                </div>
+            </div>
+            <a href="#overview" class="cta-button">探索架构设计</a>
+        </div>
+    </section>
+
+    <!-- 业务流程概览 -->
+    <section id="overview" class="section-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">质量业务全景图</h2>
+                <p class="section-subtitle">覆盖从供应商到客户的端到端质量管理流程</p>
+            </div>
+            
+            <div class="process-flow">
+                                <div class="process-card" data-process="external">
+                    <div class="process-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" stroke="#FF6600" stroke-width="2"/>
+                            <path d="M14 24L20 30L34 16" stroke="#0066CC" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>外部协同</h3>
+                    <p>供应商/客户</p>
+                    <ul class="process-items">
+                        <li>供应商来料质检</li>
+                        <li>客户投诉响应</li>
+                        <li>质量反馈闭环</li>
+                    </ul>
+                </div>
+
+                                <div class="process-card" data-process="dq">
+                    <div class="process-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="8" y="12" width="32" height="24" rx="2" stroke="#FF6600" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="6" fill="#0066CC"/>
+                            <path d="M24 24L30 18" stroke="#0066CC" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>DQ - 研发质量</h3>
+                    <p>新产品开发 G1-G5</p>
+                    <ul class="process-items">
+                        <li>G1-G2: 设计评审</li>
+                        <li>G3: FMEA设计冻结</li>
+                        <li>G4-G5: 量产爬坡</li>
+                    </ul>
+                </div>
+
+                                <div class="process-card" data-process="sq">
+                    <div class="process-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="10" y="16" width="28" height="20" stroke="#FF6600" stroke-width="2"/>
+                            <path d="M24 8L34 16M24 8L14 16M24 8V16" stroke="#0066CC" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>SQ - 供应商质量</h3>
+                    <p>供应链质量管控</p>
+                    <ul class="process-items">
+                        <li>供应商准入评估</li>
+                        <li>来料检验 (IQC)</li>
+                        <li>月度绩效评价</li>
+                    </ul>
+                </div>
+
+                                <div class="process-card" data-process="pq">
+                    <div class="process-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="14" stroke="#FF6600" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="3" fill="#0066CC"/>
+                            <path d="M24 10V14M24 34V38M38 24H34M14 24H10" stroke="#FF6600" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>PQ - 产品质量</h3>
+                    <p>量产阶段质量控制</p>
+                    <ul class="process-items">
+                        <li>首件检验 (IQC)</li>
+                        <li>过程监控 (PQC)</li>
+                        <li>出货质量检验</li>
+                    </ul>
+                </div>
+
+                                <div class="process-card" data-process="cq">
+                    <div class="process-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M14 16C14 14 15 12 18 12H30C33 12 34 14 34 16V28C34 30 33 32 30 32H24L18 36V32C15 32 14 30 14 28V16Z" stroke="#FF6600" stroke-width="2"/>
+                            <circle cx="20" cy="22" r="2" fill="#0066CC"/>
+                            <circle cx="28" cy="22" r="2" fill="#0066CC"/>
+                        </svg>
+                    </div>
+                    <h3>CQ - 客户质量</h3>
+                    <p>市场端质量响应</p>
+                    <ul class="process-items">
+                        <li>客诉接收分流</li>
+                        <li>失效分析 (FA)</li>
+                        <li>8D报告跟进</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 架构设计 - 5层架构 -->
+    <section id="architecture" class="section-architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Harness 工程架构设计</h2>
+                <p class="section-subtitle">5层分离式架构 · 模块化可扩展 · 全流程可追溯</p>
+            </div>
+
+            <div class="architecture-layers">
+                <!-- Layer 1: 接入层 -->
+                <div class="arch-layer" data-layer="1">
+                    <div class="layer-number">01</div>
+                    <div class="layer-content">
+                        <h3>统一接入层</h3>
+                        <p class="layer-desc">多角色身份识别 · 场景智能路由 · 权限细粒度控制</p>
+                        <div class="layer-features">
+                            <span class="feature-tag">身份识别</span>
+                            <span class="feature-tag">场景路由</span>
+                            <span class="feature-tag">权限控制</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer 2: 场景编排层 -->
+                <div class="arch-layer" data-layer="2">
+                    <div class="layer-number">02</div>
+                    <div class="layer-content">
+                        <h3>场景编排层</h3>
+                        <p class="layer-desc">5大业务场景编排器 · 流程即服务 · 人机协同决策</p>
+                        <div class="layer-features">
+                            <span class="feature-tag">CQ Orchestrator</span>
+                            <span class="feature-tag">SQ Orchestrator</span>
+                            <span class="feature-tag">DQ Orchestrator</span>
+                            <span class="feature-tag">PQ Orchestrator</span>
+                            <span class="feature-tag">External Orchestrator</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer 3: 能力中台层 -->
+                <div class="arch-layer" data-layer="3">
+                    <div class="layer-number">03</div>
+                    <div class="layer-content">
+                        <h3>能力中台层</h3>
+                        <p class="layer-desc">共享Agent池 · 原子能力复用 · 智能分析引擎</p>
+                        <div class="layer-grid">
+                            <div class="capability-group">
+                                <h4>📊 数据检索</h4>
+                                <p>CQ/SQ/DQ/PQ/IQC/LL检索Agent</p>
+                            </div>
+                            <div class="capability-group">
+                                <h4>🧠 智能分析</h4>
+                                <p>失效识别 · 根因分析 · 趋势预测</p>
+                            </div>
+                            <div class="capability-group">
+                                <h4>📝 文档生成</h4>
+                                <p>8D报告 · FMEA · 质量月报</p>
+                            </div>
+                            <div class="capability-group">
+                                <h4>⚙️ 系统集成</h4>
+                                <p>MES · SAP · KQMSB · Wi-Fi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer 4: 数据标准化层 -->
+                <div class="arch-layer" data-layer="4">
+                    <div class="layer-number">04</div>
+                    <div class="layer-content">
+                        <h3>数据标准化层</h3>
+                        <p class="layer-desc">统一数据模型 · 字段映射规则 · 证据溯源标记</p>
+                        <div class="layer-features">
+                            <span class="feature-tag">去重</span>
+                            <span class="feature-tag">时间排序</span>
+                            <span class="feature-tag">字段映射</span>
+                            <span class="feature-tag">风险标准化</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer 5: 人机协同层 -->
+                <div class="arch-layer" data-layer="5">
+                    <div class="layer-number">05</div>
+                    <div class="layer-content">
+                        <h3>人机协同界面层</h3>
+                        <p class="layer-desc">差异化界面设计 · 主动预警推送 · 智能辅助工具</p>
+                        <div class="layer-grid">
+                            <div class="interface-item">
+                                <strong>管理层</strong>
+                                <p>管理摘要 · 风险清单 · 决策建议</p>
+                            </div>
+                            <div class="interface-item">
+                                <strong>质量工程师</strong>
+                                <p>任务看板 · 异常预警 · 辅助工具</p>
+                            </div>
+                            <div class="interface-item">
+                                <strong>供应商/客户</strong>
+                                <p>自助查询 · 协同改善 · 进度追踪</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 编排器详细设计 -->
+    <section id="orchestrators" class="section-orchestrators">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">场景编排器设计</h2>
+                <p class="section-subtitle">点击切换查看不同业务场景的智能编排流程</p>
+            </div>
+
+            <div class="orchestrator-tabs">
+                <button class="tab-btn active" data-tab="cq">CQ - 客户质量</button>
+                <button class="tab-btn" data-tab="sq">SQ - 供应商质量</button>
+                <button class="tab-btn" data-tab="dq">DQ - 研发质量</button>
+                <button class="tab-btn" data-tab="pq">PQ - 产品质量</button>
+                <button class="tab-btn" data-tab="external">外部协同</button>
+            </div>
+
+            <div class="orchestrator-content">
+                <!-- CQ 编排器 -->
+                <div class="orch-panel active" data-panel="cq">
+                    <div class="orch-header">
+                        <h3>CQ - 客户质量闭环场景</h3>
+                        <p>市场质量问题快速响应 · 失效分析 · 改进措施闭环</p>
+                    </div>
+                    <div class="workflow-diagram">
+                        <div class="workflow-step">
+                            <div class="step-icon">📥</div>
+                            <h4>客诉智能分流Agent</h4>
+                            <ul>
+                                <li>KQMSB记录解析</li>
+                                <li>紧急程度自动分级</li>
+                                <li>责任归属初判</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🔍</div>
+                            <h4>失效分析编排Workflow</h4>
+                            <ul>
+                                <li>失效样品信息提取</li>
+                                <li>失效模式库匹配</li>
+                                <li>内部数据追溯 (PQ/SQ/DQ)</li>
+                                <li>根本原因推理</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">💡</div>
+                            <h4>改进措施生成Agent</h4>
+                            <ul>
+                                <li>临时措施 (T1) 建议</li>
+                                <li>永久措施 (研发/生产/PQ)</li>
+                                <li>经验教训LL知识沉淀</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📊</div>
+                            <h4>客户满意度管理Agent</h4>
+                            <ul>
+                                <li>响应及时性评分</li>
+                                <li>月度质量报告生成</li>
+                                <li>风险客户预警</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SQ 编排器 -->
+                <div class="orch-panel" data-panel="sq">
+                    <div class="orch-header">
+                        <h3>SQ - 供应商质量管控场景</h3>
+                        <p>供应商全生命周期质量管理 · 来料监控 · 绩效评价</p>
+                    </div>
+                    <div class="workflow-diagram">
+                        <div class="workflow-step">
+                            <div class="step-icon">✅</div>
+                            <h4>供应商准入Agent</h4>
+                            <ul>
+                                <li>技术评估文档审查</li>
+                                <li>质量体系审核解析</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📦</div>
+                            <h4>来料质量监控Workflow</h4>
+                            <ul>
+                                <li>IQC数据实时采集</li>
+                                <li>MIP系统异常检测</li>
+                                <li>红黄牌管理触发</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📈</div>
+                            <h4>月度评价自动化Agent</h4>
+                            <ul>
+                                <li>最差表现评价生成</li>
+                                <li>最优表现评价生成</li>
+                                <li>改善趋势分析</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🤝</div>
+                            <h4>供应商协同改善Workflow</h4>
+                            <ul>
+                                <li>8D报告跟进</li>
+                                <li>驻厂辅导计划</li>
+                                <li>能力提升路线图</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DQ 编排器 -->
+                <div class="orch-panel" data-panel="dq">
+                    <div class="orch-header">
+                        <h3>DQ - 研发质量保障场景</h3>
+                        <p>新产品研发质量门禁 · G1-G5阶段管控 · FMEA评审</p>
+                    </div>
+                    <div class="workflow-diagram">
+                        <div class="workflow-step">
+                            <div class="step-icon">🚪</div>
+                            <h4>门禁守门员Agent</h4>
+                            <ul>
+                                <li>监听项目阶段节点</li>
+                                <li>自动触发质量检查清单</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📋</div>
+                            <h4>阶段专属Workflow</h4>
+                            <ul>
+                                <li>G1: 可靠性设计评审</li>
+                                <li>G2: 概念产品评审</li>
+                                <li>G3: FMEA完整性验证</li>
+                                <li>G4: 产线能力评估</li>
+                                <li>G5: 实时CPK监控</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🔗</div>
+                            <h4>跨门禁追溯Agent</h4>
+                            <ul>
+                                <li>G5问题追溯到设计阶段</li>
+                                <li>经验教训沉淀</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🚦</div>
+                            <h4>决策支持界面</h4>
+                            <ul>
+                                <li>红黄绿灯状态展示</li>
+                                <li>放行/阻断建议</li>
+                                <li>风险清单与缓解计划</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PQ 编排器 -->
+                <div class="orch-panel" data-panel="pq">
+                    <div class="orch-header">
+                        <h3>PQ - 生产质量控制场景</h3>
+                        <p>产线实时质量管控 · MES数据监听 · 异常快速响应</p>
+                    </div>
+                    <div class="workflow-diagram">
+                        <div class="workflow-step">
+                            <div class="step-icon">🔄</div>
+                            <h4>产线数字孪生Agent</h4>
+                            <ul>
+                                <li>MES实时数据流监听</li>
+                                <li>Wi-Fi工序参数监控</li>
+                                <li>问题上报PQC系统</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">⚠️</div>
+                            <h4>异常响应Workflow</h4>
+                            <ul>
+                                <li>首件检验自动判定</li>
+                                <li>过程监控SPC预警</li>
+                                <li>整机测试失效分析</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">⚡</div>
+                            <h4>快速响应决策Agent</h4>
+                            <ul>
+                                <li>停线/继续生产判定</li>
+                                <li>隔离/返工指令生成</li>
+                                <li>工程变更需求触发</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">✈️</div>
+                            <h4>出货决策Workflow</h4>
+                            <ul>
+                                <li>SAP/PLM数据验证</li>
+                                <li>质量放行条件检查</li>
+                                <li>追溯标签生成</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- External 编排器 -->
+                <div class="orch-panel" data-panel="external">
+                    <div class="orch-header">
+                        <h3>外部协同场景</h3>
+                        <p>供应商/客户协同 · 投诉响应 · 质量问题闭环</p>
+                    </div>
+                    <div class="workflow-diagram">
+                        <div class="workflow-step">
+                            <div class="step-icon">🎯</div>
+                            <h4>意图识别Agent</h4>
+                            <ul>
+                                <li>投诉类型分类</li>
+                                <li>紧急程度评估</li>
+                                <li>责任归属初判</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📁</div>
+                            <h4>证据收集Workflow</h4>
+                            <ul>
+                                <li>客诉单据检索 (CQ)</li>
+                                <li>供应商来料记录 (IQC)</li>
+                                <li>生产批次追溯 (PQ)</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🔗</div>
+                            <h4>跨域关联分析Agent</h4>
+                            <ul>
+                                <li>失效模式匹配 (FMEA)</li>
+                                <li>历史问题关联</li>
+                                <li>供应商风险评分</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">✉️</div>
+                            <h4>响应决策Agent</h4>
+                            <ul>
+                                <li>8D报告生成建议</li>
+                                <li>返工/让步接收判定</li>
+                                <li>供应商考核触发</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Harness工程机制 -->
+    <section id="harness" class="section-harness">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Harness 工程关键机制</h2>
+                <p class="section-subtitle">流程编排 · 状态机管理 · 全流程可观测</p>
+            </div>
+
+            <div class="harness-grid">
+                <div class="harness-card">
+                    <div class="harness-icon">🎼</div>
+                    <h3>流程编排引擎</h3>
+                    <div class="code-block">
+<pre><code>class QualityProcessOrchestrator:
+    def route_request(self, request):
+        scenario = self.identify_scenario(request)
+        
+        if scenario == "customer_complaint":
+            return CQOrchestrator().execute()
+        elif scenario == "supplier_issue":
+            return SQOrchestrator().execute()
+        ...</code></pre>
+                    </div>
+                    <p>自动识别场景，选择对应编排器，并行执行多Agent汇总结果</p>
+                </div>
+
+                <div class="harness-card">
+                    <div class="harness-icon">⚙️</div>
+                    <h3>状态机管理</h3>
+                    <div class="state-machine">
+                        <div class="state-flow">
+                            <div class="state">接收</div>
+                            <span>→</span>
+                            <div class="state">分类</div>
+                            <span>→</span>
+                            <div class="state">调查</div>
+                            <span>→</span>
+                            <div class="state">根因确认</div>
+                            <span>→</span>
+                            <div class="state">措施制定</div>
+                            <span>→</span>
+                            <div class="state">实施验证</div>
+                            <span>→</span>
+                            <div class="state active">关闭</div>
+                        </div>
+                    </div>
+                    <p>每个质量事件都有明确的生命周期状态，可追溯、可审计</p>
+                </div>
+
+                <div class="harness-card">
+                    <div class="harness-icon">📊</div>
+                    <h3>可观测性设计</h3>
+                    <ul class="observability-list">
+                        <li><strong>输入数据</strong> - 完整记录请求参数</li>
+                        <li><strong>决策过程</strong> - 推理链全程可追溯</li>
+                        <li><strong>输出结果</strong> - 结构化存储</li>
+                        <li><strong>执行时间</strong> - 性能监控与优化</li>
+                        <li><strong>人工干预节点</strong> - 审批记录存档</li>
+                    </ul>
+                    <p class="text-muted">用于审计追溯、模型优化、流程改进、合规性证明</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- 实时数据看板 -->
+    <section id="metrics" class="section-metrics">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">质量数据实时看板</h2>
+                <p class="section-subtitle">跨业务流程的关键质量指标监控</p>
+            </div>
+
+            <div class="metrics-grid">
+                <!-- 客户质量指标 -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>CQ - 客户投诉</h3>
+                        <span class="metric-trend up">↓ 15%</span>
+                    </div>
+                    <div class="metric-chart" id="cq-chart">
+                        <canvas></canvas>
+                    </div>
+                    <div class="metric-stats">
+                        <div class="stat">
+                            <span class="stat-label">本月</span>
+                            <span class="stat-value">12</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">平均响应</span>
+                            <span class="stat-value">4.2h</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">关闭率</span>
+                            <span class="stat-value">92%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 供应商质量指标 -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>SQ - 来料合格率</h3>
+                        <span class="metric-trend up">↑ 3.5%</span>
+                    </div>
+                    <div class="metric-chart" id="sq-chart">
+                        <canvas></canvas>
+                    </div>
+                    <div class="metric-stats">
+                        <div class="stat">
+                            <span class="stat-label">本月</span>
+                            <span class="stat-value">96.8%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">红牌供应商</span>
+                            <span class="stat-value">2</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">改善中</span>
+                            <span class="stat-value">5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 研发质量指标 -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>DQ - 设计变更</h3>
+                        <span class="metric-trend down">↓ 22%</span>
+                    </div>
+                    <div class="metric-chart" id="dq-chart">
+                        <canvas></canvas>
+                    </div>
+                    <div class="metric-stats">
+                        <div class="stat">
+                            <span class="stat-label">本月</span>
+                            <span class="stat-value">8</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">门禁通过</span>
+                            <span class="stat-value">G3</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">FMEA完成</span>
+                            <span class="stat-value">100%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 生产质量指标 -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>PQ - 过程CPK</h3>
+                        <span class="metric-trend up">↑ 0.15</span>
+                    </div>
+                    <div class="metric-chart" id="pq-chart">
+                        <canvas></canvas>
+                    </div>
+                    <div class="metric-stats">
+                        <div class="stat">
+                            <span class="stat-label">平均CPK</span>
+                            <span class="stat-value">1.67</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">不良率</span>
+                            <span class="stat-value">0.3%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">返工率</span>
+                            <span class="stat-value">1.2%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent活动热力图 -->
+            <div class="agent-activity">
+                <h3>Agent 活动热力图 (过去24小时)</h3>
+                <div class="heatmap-container">
+                    <div class="heatmap-row">
+                        <div class="heatmap-label">CQ Agent</div>
+                        <div class="heatmap-cells" data-agent="cq"></div>
+                        <div class="heatmap-count">47</div>
+                    </div>
+                    <div class="heatmap-row">
+                        <div class="heatmap-label">SQ Agent</div>
+                        <div class="heatmap-cells" data-agent="sq"></div>
+                        <div class="heatmap-count">32</div>
+                    </div>
+                    <div class="heatmap-row">
+                        <div class="heatmap-label">DQ Agent</div>
+                        <div class="heatmap-cells" data-agent="dq"></div>
+                        <div class="heatmap-count">18</div>
+                    </div>
+                    <div class="heatmap-row">
+                        <div class="heatmap-label">PQ Agent</div>
+                        <div class="heatmap-cells" data-agent="pq"></div>
+                        <div class="heatmap-count">156</div>
+                    </div>
+                    <div class="heatmap-row">
+                        <div class="heatmap-label">External Agent</div>
+                        <div class="heatmap-cells" data-agent="external"></div>
+                        <div class="heatmap-count">23</div>
+                    </div>
+                </div>
+                <div class="heatmap-legend">
+                    <span>0</span>
+                    <div class="legend-gradient"></div>
+                    <span>20+</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实施路线图 (已移除) -->
+    <section id="roadmap" class="section-roadmap" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">实施路线图</h2>
+                <p class="section-subtitle">分阶段推进 · 快速验证 · 持续迭代</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item" data-phase="1">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="phase-badge">阶段 1</div>
+                        <h3>快速验证</h3>
+                        <p class="phase-duration">1-2 个月</p>
+                        <ul>
+                            <li>在现有管理层问答架构基础上，实现 <strong>CQ Orchestrator</strong></li>
+                            <li>打通客诉接收 → 失效分析 → 改进措施的自动化流程</li>
+                            <li>验证 Harness 编排模式的可行性</li>
+                        </ul>
+                        <div class="phase-metrics">
+                            <span class="metric-tag">✅ 1个编排器</span>
+                            <span class="metric-tag">⏱️ 客诉响应时间-50%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-phase="2">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="phase-badge">阶段 2</div>
+                        <h3>横向扩展</h3>
+                        <p class="phase-duration">3-4 个月</p>
+                        <ul>
+                            <li>并行开发 <strong>SQ / PQ / DQ Orchestrator</strong></li>
+                            <li>建设能力中台的共享 Agent 池</li>
+                            <li>完善数据标准化层</li>
+                        </ul>
+                        <div class="phase-metrics">
+                            <span class="metric-tag">✅ 5个编排器</span>
+                            <span class="metric-tag">🤖 15+ Agent</span>
+                            <span class="metric-tag">📊 数据标准化</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-phase="3">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="phase-badge">阶段 3</div>
+                        <h3>纵向深化</h3>
+                        <p class="phase-duration">5-6 个月</p>
+                        <ul>
+                            <li>实现跨场景智能关联 (如 CQ 问题追溯到 DQ 设计缺陷)</li>
+                            <li>构建预测性质量分析能力</li>
+                            <li>打造质量知识图谱</li>
+                        </ul>
+                        <div class="phase-metrics">
+                            <span class="metric-tag">🔗 跨域关联</span>
+                            <span class="metric-tag">🔮 预测分析</span>
+                            <span class="metric-tag">🧠 知识图谱</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-phase="4">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="phase-badge">阶段 4</div>
+                        <h3>生态开放</h3>
+                        <p class="phase-duration">持续优化</p>
+                        <ul>
+                            <li>向供应商/客户开放协同界面</li>
+                            <li>与 PLM / MES / ERP 系统深度集成</li>
+                            <li>持续优化 Agent 能力</li>
+                        </ul>
+                        <div class="phase-metrics">
+                            <span class="metric-tag">🌐 生态协同</span>
+                            <span class="metric-tag">🔌 系统集成</span>
+                            <span class="metric-tag">📈 持续优化</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- 价值对比 (已移除) -->
+    <section id="comparison" class="section-comparison" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">架构升级对比</h2>
+                <p class="section-subtitle">从信息检索到智能操作系统的跨越</p>
+            </div>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>维度</th>
+                            <th class="old-arch">原架构（管理层问答）</th>
+                            <th class="new-arch">新架构（Harness多流程编排）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>服务对象</strong></td>
+                            <td>管理层</td>
+                            <td>管理层 + 质量工程师 + 供应商 + 客户</td>
+                        </tr>
+                        <tr>
+                            <td><strong>交互模式</strong></td>
+                            <td>被动问答</td>
+                            <td>主动 + 被动（预警、推送、问答）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>流程深度</strong></td>
+                            <td>浅层汇总</td>
+                            <td>深入业务执行层</td>
+                        </tr>
+                        <tr>
+                            <td><strong>自动化程度</strong></td>
+                            <td>信息检索</td>
+                            <td>任务编排 + 决策支持 + 执行监控</td>
+                        </tr>
+                        <tr>
+                            <td><strong>可追溯性</strong></td>
+                            <td>证据来源</td>
+                            <td>全流程状态机 + 审计日志</td>
+                        </tr>
+                        <tr>
+                            <td><strong>知识沉淀</strong></td>
+                            <td>静态检索</td>
+                            <td>动态学习 + 经验闭环</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="value-highlight">
+                <div class="value-card">
+                    <div class="value-number">10x</div>
+                    <p>质量问题响应速度提升</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">80%</div>
+                    <p>重复性工作自动化率</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">24/7</div>
+                    <p>全天候质量监控守护</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-kuka">KUKA</span>
+                    <p>质量数字员工矩阵</p>
+                </div>
+                <div class="footer-info">
+                    <p>基于 Harness 工程理念设计</p>
+                    <p>© 2024 库卡机器人质量部门. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
